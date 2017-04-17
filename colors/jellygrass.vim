@@ -410,23 +410,32 @@ call s:X("ColorColumn","","000000","","",s:termBlack)
 
 call s:X("Title","70b950","","bold","Green","")
 
-call s:X("Constant","cf6a4c","","","Red","")
+" Red: d5402c
+" Green: 608516
+" LightGreen: 88aa7e
+" LightBlue: 8fbfdc
+" Purple: 7697d6
+" LightYellow: fffd6d
+" LightOrange: fad07a
+" Orange: ffb964
+
+call s:X("Constant","fad07a","","","LightOrange","")
 call s:X("Special","799d6a","","","Green","")
 call s:X("Delimiter","668799","","","Grey","")
 
-call s:X("String","99ad6a","","","Green","")
-call s:X("StringDelimiter","556633","","","DarkGreen","")
+call s:X("String","fffd6d","","","LightYellow","")
+call s:X("StringDelimiter","fffd6d","","","LightYellow","")
 
-call s:X("Identifier","c6b6ee","","","LightCyan","")
-call s:X("Structure","8fbfdc","","","LightCyan","")
-call s:X("Function","fad07a","","","Yellow","")
-call s:X("Statement","8197bf","","","DarkBlue","")
+call s:X("Identifier","88aa7e","","","LightGreen","")
+call s:X("Structure","88aa7e","","","LightGreen","")
+call s:X("Function","88aa7e","","","LightGreen","")
+call s:X("Statement","608516","","","Green","")
 call s:X("PreProc","8fbfdc","","","LightBlue","")
 
 hi! link Operator Structure
 hi! link Conceal Operator
 
-call s:X("Type","ffb964","","","Yellow","")
+call s:X("Type","ffb964","","","Orange","")
 call s:X("NonText","606060",s:background_color,"",s:termBlack,"")
 
 call s:X("SpecialKey","444444","1c1c1c","",s:termBlack,"")
@@ -486,10 +495,10 @@ hi! link rubyConstant Type
 hi! link rubyFunction Function
 
 call s:X("rubyInstanceVariable","c6b6fe","","","Cyan","")
-call s:X("rubySymbol","7697d6","","","Blue","")
+call s:X("rubySymbol","88aa7e","","","Cyan","")
 hi! link rubyGlobalVariable rubyInstanceVariable
 hi! link rubyModule rubyClass
-call s:X("rubyControl","7597c6","","","Blue","")
+call s:X("rubyControl","608516","","","Green","")
 
 hi! link rubyString String
 hi! link rubyStringDelimiter StringDelimiter
