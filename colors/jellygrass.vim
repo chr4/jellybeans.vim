@@ -423,8 +423,8 @@ call s:X("Constant","fad07a","","","LightOrange","")
 call s:X("Special","799d6a","","","Green","")
 call s:X("Delimiter","668799","","","Grey","")
 
-call s:X("String","fffd6d","","","LightYellow","")
-call s:X("StringDelimiter","fffd6d","","","LightYellow","")
+call s:X("String","7697d6","","","Purple","")
+call s:X("StringDelimiter","7697d6","","","Purple","")
 
 call s:X("Identifier","88aa7e","","","LightGreen","")
 call s:X("Structure","88aa7e","","","LightGreen","")
