@@ -411,20 +411,24 @@ call s:X("ColorColumn","","000000","","",s:termBlack)
 call s:X("Title","70b950","","bold","Green","")
 
 " Red: d5402c
+" LightRed: cf6a4c
 " Green: 608516
 " LightGreen: 88aa7e
+" Blue: 4d75ba
+" Cyan: 6fbdba
 " LightBlue: 8fbfdc
 " Purple: 7697d6
+" Yellow: e7d56c
 " LightYellow: fffd6d
 " LightOrange: fad07a
 " Orange: ffb964
 
-call s:X("Constant","fad07a","","","LightOrange","")
+call s:X("Constant","cf6a4c","","","Red","")
 call s:X("Special","799d6a","","","Green","")
-call s:X("Delimiter","668799","","","Grey","")
+call s:X("Delimiter","6fbdba","","","Cyan","")
 
-call s:X("String","7697d6","","","Purple","")
-call s:X("StringDelimiter","7697d6","","","Purple","")
+call s:X("String","e7d56c","","","Yellow","")
+call s:X("StringDelimiter","e7d56c","","","Yellow","")
 
 call s:X("Identifier","88aa7e","","","LightGreen","")
 call s:X("Structure","88aa7e","","","LightGreen","")
@@ -435,7 +439,7 @@ call s:X("PreProc","8fbfdc","","","LightBlue","")
 hi! link Operator Structure
 hi! link Conceal Operator
 
-call s:X("Type","ffb964","","","Orange","")
+call s:X("Type","4d75ba","","","Blue","")
 call s:X("NonText","606060",s:background_color,"",s:termBlack,"")
 
 call s:X("SpecialKey","444444","1c1c1c","",s:termBlack,"")
