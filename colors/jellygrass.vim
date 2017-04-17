@@ -9,8 +9,8 @@
 "
 "         "A colorful, dark color scheme for Vim."
 "
-" File:         jellybeans.vim
-" URL:          github.com/nanotech/jellybeans.vim
+" File:         jellygrass.vim
+" URL:          github.com/nanotech/jellygrass.vim
 " Scripts URL:  vim.org/scripts/script.php?script_id=2555
 " Maintainer:   NanoTech (nanotech.nanotechcorp.net)
 " Version:      1.6
@@ -63,7 +63,7 @@ if exists("syntax_on")
   syntax reset
 endif
 
-let colors_name = "jellybeans"
+let colors_name = "jellygrass"
 
 if has("gui_running") || (has('termguicolors') && &termguicolors) || &t_Co >= 88
   let s:low_color = 0
@@ -72,23 +72,23 @@ else
 endif
 
 " Configuration Variables:
-" - g:jellybeans_overrides          (default = {})
-" - g:jellybeans_use_lowcolor_black (default = 1)
-" - g:jellybeans_use_gui_italics    (default = 1)
-" - g:jellybeans_use_term_italics   (default = 0)
+" - g:jellygrass_overrides          (default = {})
+" - g:jellygrass_use_lowcolor_black (default = 1)
+" - g:jellygrass_use_gui_italics    (default = 1)
+" - g:jellygrass_use_term_italics   (default = 0)
 
 let s:background_color = "151515"
 
-if exists("g:jellybeans_overrides")
-  let s:overrides = g:jellybeans_overrides
+if exists("g:jellygrass_overrides")
+  let s:overrides = g:jellygrass_overrides
 else
   let s:overrides = {}
 endif
 
 " Backwards compatibility
-if exists("g:jellybeans_background_color")
-  \ || exists("g:jellybeans_background_color_256")
-  \ || exists("g:jellybeans_use_term_background_color")
+if exists("g:jellygrass_background_color")
+  \ || exists("g:jellygrass_background_color_256")
+  \ || exists("g:jellygrass_use_term_background_color")
 
   let s:overrides = deepcopy(s:overrides)
 
@@ -96,29 +96,29 @@ if exists("g:jellybeans_background_color")
     let s:overrides["background"] = {}
   endif
 
-  if exists("g:jellybeans_background_color")
-    let s:overrides["background"]["guibg"] = g:jellybeans_background_color
+  if exists("g:jellygrass_background_color")
+    let s:overrides["background"]["guibg"] = g:jellygrass_background_color
   endif
 
-  if exists("g:jellybeans_background_color_256")
-    let s:overrides["background"]["256ctermbg"] = g:jellybeans_background_color_256
+  if exists("g:jellygrass_background_color_256")
+    let s:overrides["background"]["256ctermbg"] = g:jellygrass_background_color_256
   endif
 
-  if exists("g:jellybeans_use_term_background_color")
-    \ && g:jellybeans_use_term_background_color
+  if exists("g:jellygrass_use_term_background_color")
+    \ && g:jellygrass_use_term_background_color
     let s:overrides["background"]["ctermbg"] = "NONE"
     let s:overrides["background"]["256ctermbg"] = "NONE"
   endif
 endif
 
-if !exists("g:jellybeans_use_lowcolor_black") || g:jellybeans_use_lowcolor_black
+if !exists("g:jellygrass_use_lowcolor_black") || g:jellygrass_use_lowcolor_black
   let s:termBlack = "Black"
 else
   let s:termBlack = "Grey"
 endif
 
 " Color approximation functions by Henry So, Jr. and David Liang {{{
-" Added to jellybeans.vim by Daniel Herbert
+" Added to jellygrass.vim by Daniel Herbert
 
 " returns an approximate grey index for the given grey level
 fun! s:grey_number(x)
@@ -357,13 +357,13 @@ fun! s:X(group, fg, bg, attr, lcfg, lcbg)
 
   let l:attr = s:prefix_highlight_value_with("", a:attr)
 
-  if exists("g:jellybeans_use_term_italics") && g:jellybeans_use_term_italics
+  if exists("g:jellygrass_use_term_italics") && g:jellygrass_use_term_italics
     let l:cterm_attr = l:attr
   else
     let l:cterm_attr = s:remove_italic_attr(l:attr)
   endif
 
-  if !exists("g:jellybeans_use_gui_italics") || g:jellybeans_use_gui_italics
+  if !exists("g:jellygrass_use_gui_italics") || g:jellygrass_use_gui_italics
     let l:gui_attr = l:attr
   else
     let l:gui_attr = s:remove_italic_attr(l:attr)

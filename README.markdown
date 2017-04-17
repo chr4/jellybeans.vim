@@ -1,4 +1,4 @@
-jellybeans.vim
+jellygrass.vim
 ==============
 
 A colorful, dark color scheme, inspired by [ir_black][] and [twilight][].
@@ -16,10 +16,10 @@ Scroll down for [screenshots][ss-anchor]!
 ### Custom Highlights
 
 If you prefer slightly different colors from what Jellybeans defines,
-you can set `g:jellybeans_overrides` in your .vimrc to a dictionary of
+you can set `g:jellygrass_overrides` in your .vimrc to a dictionary of
 custom highlighting parameters:
 
-    let g:jellybeans_overrides = {
+    let g:jellygrass_overrides = {
     \    'Todo': { 'guifg': '303030', 'guibg': 'f0f000',
     \              'ctermfg': 'Black', 'ctermbg': 'Yellow',
     \              'attr': 'bold' },
@@ -40,7 +40,7 @@ its choices.
 To set a custom background color, override the special
 `background` highlight group:
 
-    let g:jellybeans_overrides = {
+    let g:jellygrass_overrides = {
     \    'background': { 'guibg': '000000' },
     \}
 
@@ -48,8 +48,8 @@ Jellybeans uses the background color in multiple highlight
 groups. Using the special `background` group overrides them all
 at once.
 
-This replaces `g:jellybeans_background_color` and
-`g:jellybeans_background_color_256` from Jellybeans versions
+This replaces `g:jellygrass_background_color` and
+`g:jellygrass_background_color_256` from Jellybeans versions
 before 1.6.
 
 #### Terminal Background
@@ -59,7 +59,7 @@ If you would prefer to use your terminal's default background
 different color) instead of the background color that Jellybeans
 applies, use this `background` override:
 
-    let g:jellybeans_overrides = {
+    let g:jellygrass_overrides = {
     \    'background': { 'ctermbg': 'none', '256ctermbg': 'none' },
     \}
 
@@ -70,13 +70,13 @@ terminals do other things with the text's colors instead of
 actually italicizing the text. If your terminal does fully
 support italics, add
 
-    let g:jellybeans_use_term_italics = 1
+    let g:jellygrass_use_term_italics = 1
 
 to your .vimrc to enable italics in terminal Vim.
 
 If you don't want italics even in GUI Vim, add
 
-    let g:jellybeans_use_gui_italics = 0
+    let g:jellygrass_use_gui_italics = 0
 
 ### Low-Color Black (16 and 8 color terminals)
 
@@ -87,7 +87,7 @@ uses no color when it really wants black.
 If you can’t or don’t want to change your terminal’s color
 mappings, add
 
-    let g:jellybeans_use_lowcolor_black = 0
+    let g:jellygrass_use_lowcolor_black = 0
 
 to your .vimrc to render “black” text as Vim’s grey (ANSI white).
 
@@ -111,6 +111,6 @@ set guifont=Monaco:h10 noanti
 [vimscript]: http://www.vim.org/scripts/script.php?script_id=2555
 [tc-leopard]: http://ciaranwal.sh/2007/11/01/customising-colours-in-leopard-terminal
 [tc-snowleopard]: https://github.com/timmfin/terminalcolours
-[preview-ss]: https://nanotech.nanotechcorp.net/downloads/jellybeans-preview.png
+[preview-ss]: https://nanotech.nanotechcorp.net/downloads/jellygrass-preview.png
 [ss-anchor]: #screenshots
 [monaco]: https://en.wikipedia.org/wiki/Monaco_(typeface)
