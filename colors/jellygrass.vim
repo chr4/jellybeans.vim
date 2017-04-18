@@ -250,6 +250,10 @@ hi! link xmlDocTypeDecl PreProc
 hi! link xmlDocTypeKeyword PreProc
 hi! link xmlProcessingDelim xmlAttrib
 
+" Markdown
+call s:X("markdownURL",s:yellow,"","")
+call s:X("htmlLink",s:light_orange,"","underline")
+
 " Debugger.vim
 call s:X("DbgCurrent",195,25,"")
 call s:X("DbgBreakPt","",52,"")
