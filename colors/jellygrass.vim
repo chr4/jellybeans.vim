@@ -71,7 +71,7 @@ else
   let s:low_color = 1
 endif
 
-let s:background_color = "151515"
+let s:background_color = "#151515"
 let s:termBlack = "Grey"
 
 " Color approximation functions by Henry So, Jr. and David Liang {{{
@@ -342,92 +342,79 @@ fun! s:X(group, fg, bg, attr, lcfg, lcbg)
 endfun
 " }}}
 
-call s:X("Normal","e8e8d3",s:background_color,"","White","")
+call s:X("Normal","#e8e8d3",s:background_color,"","White","")
 set background=dark
 
 if version >= 700
-  call s:X("CursorLine","","1c1c1c","","",s:termBlack)
-  call s:X("CursorColumn","","1c1c1c","","",s:termBlack)
-  call s:X("MatchParen","ffffff","556779","bold","","DarkCyan")
+  call s:X("CursorLine","","#1c1c1c","","",s:termBlack)
+  call s:X("CursorColumn","","#1c1c1c","","",s:termBlack)
+  call s:X("MatchParen","#ffffff","#556779","bold","","DarkCyan")
 
-  call s:X("TabLine","000000","b0b8c0","italic","",s:termBlack)
-  call s:X("TabLineFill","9098a0","","","",s:termBlack)
-  call s:X("TabLineSel","000000","f0f0f0","italic,bold",s:termBlack,"White")
+  call s:X("TabLine","#000000","#b0b8c0","italic","",s:termBlack)
+  call s:X("TabLineFill","#9098a0","","","",s:termBlack)
+  call s:X("TabLineSel","#000000","#f0f0f0","italic,bold",s:termBlack,"White")
 
   " Auto-completion
-  call s:X("Pmenu","ffffff","606060","","White",s:termBlack)
-  call s:X("PmenuSel","101010","eeeeee","",s:termBlack,"White")
+  call s:X("Pmenu","#ffffff","#606060","","White",s:termBlack)
+  call s:X("PmenuSel","#101010","#eeeeee","",s:termBlack,"White")
 endif
 
-call s:X("Visual","","404040","","",s:termBlack)
-call s:X("Cursor",s:background_color,"b0d0f0","","","")
+call s:X("Visual","","#404040","","",s:termBlack)
+call s:X("Cursor",s:background_color,"#b0d0f0","","","")
 
-call s:X("LineNr","605958",s:background_color,"NONE",s:termBlack,"")
-call s:X("CursorLineNr","ccc5c4","","NONE","White","")
-call s:X("Comment","888888","","italic","Grey","")
-call s:X("Todo","c7c7c7","","bold","White",s:termBlack)
+call s:X("LineNr","#605958",s:background_color,"NONE",s:termBlack,"")
+call s:X("CursorLineNr","#ccc5c4","","NONE","White","")
+call s:X("Comment","#888888","","italic","Grey","")
+call s:X("Todo","#c7c7c7","","bold","White",s:termBlack)
 
-call s:X("StatusLine","000000","dddddd","italic","","White")
-call s:X("StatusLineNC","ffffff","403c41","italic","White","Black")
-call s:X("VertSplit","777777","403c41","",s:termBlack,s:termBlack)
-call s:X("WildMenu","f0a0c0","302028","","Magenta","")
+call s:X("StatusLine","#000000","#dddddd","italic","","White")
+call s:X("StatusLineNC","#ffffff","#403c41","italic","White","Black")
+call s:X("VertSplit","#777777","#403c41","",s:termBlack,s:termBlack)
+call s:X("WildMenu","#f0a0c0","#302028","","Magenta","")
 
-call s:X("Folded","a0a8b0","384048","italic",s:termBlack,"")
-call s:X("FoldColumn","535D66","1f1f1f","","",s:termBlack)
-call s:X("SignColumn","777777","333333","","",s:termBlack)
-call s:X("ColorColumn","","000000","","",s:termBlack)
+call s:X("Folded","#a0a8b0","#384048","italic",s:termBlack,"")
+call s:X("FoldColumn","#535D66","#1f1f1f","","",s:termBlack)
+call s:X("SignColumn","#777777","#333333","","",s:termBlack)
+call s:X("ColorColumn","","#000000","","",s:termBlack)
 
-call s:X("Title","70b950","","bold","Green","")
+call s:X("Title","#70b950","","bold","Green","")
 
-" Red: d5402c
-" LightRed: cf6a4c
-" Green: 608516
-" LightGreen: 88aa7e
-" Blue: 4d75ba
-" Cyan: 6fbdba
-" LightBlue: 8fbfdc
-" Purple: 7697d6
-" Yellow: e7d56c
-" LightYellow: fffd6d
-" LightOrange: fad07a
-" Orange: ffb964
+call s:X("Constant","#cf6a4c","","","Red","")
+call s:X("Special","#799d6a","","","Green","")
+call s:X("Delimiter","#6fbdba","","","Cyan","")
 
-call s:X("Constant","cf6a4c","","","Red","")
-call s:X("Special","799d6a","","","Green","")
-call s:X("Delimiter","6fbdba","","","Cyan","")
+call s:X("String","#e7d56c","","","Yellow","")
+call s:X("StringDelimiter","#e7d56c","","","Yellow","")
 
-call s:X("String","e7d56c","","","Yellow","")
-call s:X("StringDelimiter","e7d56c","","","Yellow","")
-
-call s:X("Identifier","88aa7e","","","LightGreen","")
-call s:X("Structure","88aa7e","","","LightGreen","")
-call s:X("Function","88aa7e","","","LightGreen","")
-call s:X("Statement","608516","","","Green","")
-call s:X("PreProc","8fbfdc","","","LightBlue","")
+call s:X("Identifier","#88aa7e","","","LightGreen","")
+call s:X("Structure","#88aa7e","","","LightGreen","")
+call s:X("Function","#88aa7e","","","LightGreen","")
+call s:X("Statement","#608516","","","Green","")
+call s:X("PreProc","#8fbfdc","","","LightBlue","")
 
 hi! link Operator Structure
 hi! link Conceal Operator
 
-call s:X("Type","4d75ba","","","Blue","")
-call s:X("NonText","606060",s:background_color,"",s:termBlack,"")
+call s:X("Type","#4d75ba","","","Blue","")
+call s:X("NonText","#606060",s:background_color,"",s:termBlack,"")
 
-call s:X("SpecialKey","444444","1c1c1c","",s:termBlack,"")
+call s:X("SpecialKey","#444444","#1c1c1c","",s:termBlack,"")
 
-call s:X("Search","f0a0c0","302028","underline","Magenta","")
+call s:X("Search","#f0a0c0","#302028","underline","Magenta","")
 
-call s:X("Directory","dad085","","","Yellow","")
-call s:X("ErrorMsg","","902020","","","DarkRed")
+call s:X("Directory","#dad085","","","Yellow","")
+call s:X("ErrorMsg","","#902020","","","DarkRed")
 hi! link Error ErrorMsg
 hi! link MoreMsg Special
-call s:X("Question","65C254","","","Green","")
+call s:X("Question","#65C254","","","Green","")
 
 
 " Spell Checking
 
-call s:X("SpellBad","","902020","underline","","DarkRed")
-call s:X("SpellCap","","0000df","underline","","Blue")
-call s:X("SpellRare","","540063","underline","","DarkMagenta")
-call s:X("SpellLocal","","2D7067","underline","","Green")
+call s:X("SpellBad","","#902020","underline","","DarkRed")
+call s:X("SpellCap","","#0000df","underline","","Blue")
+call s:X("SpellRare","","#540063","underline","","DarkMagenta")
+call s:X("SpellLocal","","#2D7067","underline","","Green")
 
 " Diff
 
@@ -436,15 +423,15 @@ hi! link diffAdded String
 
 " VimDiff
 
-call s:X("DiffAdd","D2EBBE","437019","","White","DarkGreen")
-call s:X("DiffDelete","40000A","700009","","DarkRed","DarkRed")
-call s:X("DiffChange","","2B5B77","","White","DarkBlue")
-call s:X("DiffText","8fbfdc","000000","reverse","Yellow","")
+call s:X("DiffAdd","#D2EBBE","#437019","","White","DarkGreen")
+call s:X("DiffDelete","#40000A","#700009","","DarkRed","DarkRed")
+call s:X("DiffChange","","#2B5B77","","White","DarkBlue")
+call s:X("DiffText","#8fbfdc","#000000","reverse","Yellow","")
 
 " PHP
 
 hi! link phpFunctions Function
-call s:X("StorageClass","c59f6f","","","Red","")
+call s:X("StorageClass","#c59f6f","","","Red","")
 hi! link phpSuperglobal Identifier
 hi! link phpQuoteSingle StringDelimiter
 hi! link phpQuoteDouble StringDelimiter
@@ -462,26 +449,26 @@ hi! link pythonOperator Statement
 " Ruby
 
 hi! link rubySharpBang Comment
-call s:X("rubyClass","447799","","","DarkBlue","")
-call s:X("rubyIdentifier","c6b6fe","","","Cyan","")
+call s:X("rubyClass","#447799","","","DarkBlue","")
+call s:X("rubyIdentifier","#c6b6fe","","","Cyan","")
 hi! link rubyConstant Type
 hi! link rubyFunction Function
 
-call s:X("rubyInstanceVariable","c6b6fe","","","Cyan","")
-call s:X("rubySymbol","88aa7e","","","Cyan","")
+call s:X("rubyInstanceVariable","#c6b6fe","","","Cyan","")
+call s:X("rubySymbol","#88aa7e","","","Cyan","")
 hi! link rubyGlobalVariable rubyInstanceVariable
 hi! link rubyModule rubyClass
-call s:X("rubyControl","608516","","","Green","")
+call s:X("rubyControl","#608516","","","Green","")
 
 hi! link rubyString String
 hi! link rubyStringDelimiter StringDelimiter
 hi! link rubyInterpolationDelimiter Identifier
 
-call s:X("rubyRegexpDelimiter","540063","","","Magenta","")
-call s:X("rubyRegexp","dd0093","","","DarkMagenta","")
-call s:X("rubyRegexpSpecial","a40073","","","Magenta","")
+call s:X("rubyRegexpDelimiter","#540063","","","Magenta","")
+call s:X("rubyRegexp","#dd0093","","","DarkMagenta","")
+call s:X("rubyRegexpSpecial","#a40073","","","Magenta","")
 
-call s:X("rubyPredefinedIdentifier","de5577","","","Red","")
+call s:X("rubyPredefinedIdentifier","#de5577","","","Red","")
 
 " Erlang
 
@@ -554,21 +541,21 @@ hi! link xmlProcessingDelim xmlAttrib
 
 " Debugger.vim
 
-call s:X("DbgCurrent","DEEBFE","345FA8","","White","DarkBlue")
-call s:X("DbgBreakPt","","4F0037","","","DarkMagenta")
+call s:X("DbgCurrent","#DEEBFE","#345FA8","","White","DarkBlue")
+call s:X("DbgBreakPt","","#4F0037","","","DarkMagenta")
 
 " vim-indent-guides
 
 if !exists("g:indent_guides_auto_colors")
   let g:indent_guides_auto_colors = 0
 endif
-call s:X("IndentGuidesOdd","","232323","","","")
-call s:X("IndentGuidesEven","","1b1b1b","","","")
+call s:X("IndentGuidesOdd","","#232323","","","")
+call s:X("IndentGuidesEven","","#1b1b1b","","","")
 
 " Plugins, etc.
 
 hi! link TagListFileName Directory
-call s:X("PreciseJumpTarget","B9ED67","405026","","White","Green")
+call s:X("PreciseJumpTarget","#B9ED67","#405026","","White","Green")
 
 " Manual overrides for 256-color terminals. Dark colors auto-map badly.
 if !s:low_color
