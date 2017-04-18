@@ -55,12 +55,6 @@ endif
 
 let colors_name = "jellygrass"
 
-if has("gui_running") || (has('termguicolors') && &termguicolors) || &t_Co >= 88
-  let s:low_color = 0
-else
-  let s:low_color = 1
-endif
-
 let s:background_color = 232
 let s:black = 16
 let s:grey = 237
@@ -311,16 +305,6 @@ call s:X("IndentGuidesEven","",233,"")
 hi! link TagListFileName Directory
 call s:X("PreciseJumpTarget",155,22,"")
 
-" Manual overrides for 256-color terminals. Dark colors auto-map badly.
-if !s:low_color
-  hi StatusLineNC ctermbg=235
-  hi Folded ctermbg=236
-  hi DiffText ctermfg=81
-  hi DbgBreakPt ctermbg=53
-  hi IndentGuidesOdd ctermbg=235
-  hi IndentGuidesEven ctermbg=234
-endif
-
 if !empty("s:overrides")
   fun! s:current_attr(group)
     let l:synid = synIDtrans(hlID(a:group))
@@ -344,14 +328,6 @@ if !empty("s:overrides")
     call s:X(a:group, get(a:def, "guifg", s:current_color(a:group, "fg", "gui")),
     \                 get(a:def, "guibg", s:current_color(a:group, "bg", "gui")),
     \                 get(a:def, "attr", s:current_attr(a:group)))
-    if !s:low_color
-      for l:prop in ["ctermfg", "ctermbg"]
-        let l:override_key = "256".l:prop
-        if has_key(a:def, l:override_key)
-          exec "hi ".a:group." ".l:prop."=".a:def[l:override_key]
-        endif
-      endfor
-    endif
   endfun
   fun! s:load_colors(defs)
     for [l:group, l:def] in items(a:defs)
