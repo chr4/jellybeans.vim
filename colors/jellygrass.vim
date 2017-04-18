@@ -71,8 +71,24 @@ else
   let s:low_color = 1
 endif
 
-let s:background_color = "#151515"
-let s:termBlack = "Grey"
+let s:background_color = 232
+let s:grey = 237
+let s:dark_grey = 233
+let s:white = 244
+let s:light_white = 255
+let s:red = 124
+let s:dark_red = 52
+let s:green = 64
+let s:light_green = 108
+let s:blue = 33
+let s:cyan = 38
+let s:light_blue = 31
+let s:purple = 98
+let s:yellow = 228
+let s:light_orange = 214
+let s:orange = 130
+
+let s:termBlack = s:background_color
 
 " Color approximation functions by Henry So, Jr. and David Liang {{{
 " Added to jellygrass.vim by Daniel Herbert
