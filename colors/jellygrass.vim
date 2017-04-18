@@ -72,6 +72,7 @@ else
 endif
 
 let s:background_color = 232
+let s:black = 16
 let s:grey = 237
 let s:dark_grey = 233
 let s:white = 244
@@ -81,8 +82,8 @@ let s:red = 9
 let s:dark_red = 88
 let s:green = 64
 let s:light_green = 108
-let s:blue = "#4d75ba"
-let s:cyan = "#6fbdba"
+let s:blue = 67          " My shellrc uses 31
+let s:cyan = 73
 let s:light_blue = 110
 let s:yellow = 185
 let s:purple = 98        " Unused
@@ -304,6 +305,7 @@ fun! s:rgb(rgb)
     let l:r = ("0x" . strpart(a:rgb, 1, 2)) + 0
     let l:g = ("0x" . strpart(a:rgb, 3, 2)) + 0
     let l:b = ("0x" . strpart(a:rgb, 5, 2)) + 0
+    echo a:rgb . " : " . s:color(l:r, l:g, l:b)
     return s:color(l:r, l:g, l:b)
   else
     return a:rgb
@@ -355,14 +357,14 @@ set background=dark
 if version >= 700
   call s:X("CursorLine","","#1c1c1c","")
   call s:X("CursorColumn","","#1c1c1c","")
-  call s:X("MatchParen","#ffffff","#556779","bold")
+  call s:X("MatchParen",s:white,"#556779","bold")
 
-  call s:X("TabLine","#000000","#b0b8c0","italic")
+  call s:X("TabLine",s:black,"#b0b8c0","italic")
   call s:X("TabLineFill","#9098a0","","")
-  call s:X("TabLineSel","#000000","#f0f0f0","italic")
+  call s:X("TabLineSel",s:black,"#f0f0f0","italic")
 
   " Auto-completion
-  call s:X("Pmenu","#ffffff","#606060","")
+  call s:X("Pmenu",s:white,"#606060","")
   call s:X("PmenuSel","#101010","#eeeeee","")
 endif
 
@@ -374,15 +376,15 @@ call s:X("CursorLineNr","#ccc5c4","","NONE")
 call s:X("Comment","#888888","","italic")
 call s:X("Todo","#c7c7c7","","bold")
 
-call s:X("StatusLine","#000000","#dddddd","italic")
-call s:X("StatusLineNC","#ffffff","#403c41","italic")
+call s:X("StatusLine",s:black,"#dddddd","italic")
+call s:X("StatusLineNC",s:white,"#403c41","italic")
 call s:X("VertSplit","#777777","#403c41","")
 call s:X("WildMenu","#f0a0c0","#302028","")
 
 call s:X("Folded","#a0a8b0","#384048","italic")
 call s:X("FoldColumn","#535D66","#1f1f1f","")
 call s:X("SignColumn","#777777","#333333","")
-call s:X("ColorColumn","","#000000","")
+call s:X("ColorColumn","",s:black,"")
 
 
 call s:X("Title",s:green,"","bold")
@@ -434,7 +436,7 @@ hi! link diffAdded String
 call s:X("DiffAdd","#D2EBBE","#437019","")
 call s:X("DiffDelete","#40000A","#700009","")
 call s:X("DiffChange","","#2B5B77","")
-call s:X("DiffText","#8fbfdc","#000000","reverse")
+call s:X("DiffText","#8fbfdc",s:black,"reverse")
 
 " PHP
 
