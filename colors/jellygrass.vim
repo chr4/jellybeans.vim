@@ -271,15 +271,26 @@ fun! s:is_empty_or_none(str)
   return empty(a:str) || a:str ==? "NONE"
 endfun
 
+" returns true if string starts with a #
+fun! s:has_prefix(str, prefix)
+  return strpart(a:str, 0, 1) ==? a:prefix
+endfun
+
 " returns the palette index to approximate the 'rrggbb' hex string
 fun! s:rgb(rgb)
   if s:is_empty_or_none(a:rgb)
     return "NONE"
   endif
-  let l:r = ("0x" . strpart(a:rgb, 0, 2)) + 0
-  let l:g = ("0x" . strpart(a:rgb, 2, 2)) + 0
-  let l:b = ("0x" . strpart(a:rgb, 4, 2)) + 0
-  return s:color(l:r, l:g, l:b)
+
+  " Calculate from RGB if prefix is given
+  if s:has_prefix(a:rgb, "#")
+    let l:r = ("0x" . strpart(a:rgb, 1, 2)) + 0
+    let l:g = ("0x" . strpart(a:rgb, 3, 2)) + 0
+    let l:b = ("0x" . strpart(a:rgb, 5, 2)) + 0
+    return s:color(l:r, l:g, l:b)
+  else
+    return a:rgb
+  endif
 endfun
 
 fun! s:prefix_highlight_value_with(prefix, color)
@@ -302,14 +313,15 @@ endfun
 fun! s:X(group, fg, bg, attr, lcfg, lcbg)
   if s:low_color
     exec "hi ".a:group.
-    \ " ctermfg=".s:prefix_highlight_value_with("", a:lcfg).
-    \ " ctermbg=".s:prefix_highlight_value_with("", a:lcbg)
+    \ " ctermfg=".s:rgb(a:lcfg).
+    \ " ctermbg=".s:rgb(a:lcbg)
   else
     exec "hi ".a:group.
-    \ " guifg=".s:prefix_highlight_value_with("#", a:fg).
-    \ " guibg=".s:prefix_highlight_value_with("#", a:bg).
     \ " ctermfg=".s:rgb(a:fg).
     \ " ctermbg=".s:rgb(a:bg)
+
+    " \ " guifg=".a:fg.
+    " \ " guibg=".a:bg.
   endif
 
   let l:attr = s:prefix_highlight_value_with("", a:attr)
