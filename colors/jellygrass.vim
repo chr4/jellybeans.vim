@@ -71,51 +71,8 @@ else
   let s:low_color = 1
 endif
 
-" Configuration Variables:
-" - g:jellygrass_overrides          (default = {})
-" - g:jellygrass_use_lowcolor_black (default = 1)
-" - g:jellygrass_use_gui_italics    (default = 1)
-" - g:jellygrass_use_term_italics   (default = 0)
-
 let s:background_color = "151515"
-
-if exists("g:jellygrass_overrides")
-  let s:overrides = g:jellygrass_overrides
-else
-  let s:overrides = {}
-endif
-
-" Backwards compatibility
-if exists("g:jellygrass_background_color")
-  \ || exists("g:jellygrass_background_color_256")
-  \ || exists("g:jellygrass_use_term_background_color")
-
-  let s:overrides = deepcopy(s:overrides)
-
-  if !has_key(s:overrides, "background")
-    let s:overrides["background"] = {}
-  endif
-
-  if exists("g:jellygrass_background_color")
-    let s:overrides["background"]["guibg"] = g:jellygrass_background_color
-  endif
-
-  if exists("g:jellygrass_background_color_256")
-    let s:overrides["background"]["256ctermbg"] = g:jellygrass_background_color_256
-  endif
-
-  if exists("g:jellygrass_use_term_background_color")
-    \ && g:jellygrass_use_term_background_color
-    let s:overrides["background"]["ctermbg"] = "NONE"
-    let s:overrides["background"]["256ctermbg"] = "NONE"
-  endif
-endif
-
-if !exists("g:jellygrass_use_lowcolor_black") || g:jellygrass_use_lowcolor_black
-  let s:termBlack = "Black"
-else
-  let s:termBlack = "Grey"
-endif
+let s:termBlack = "Grey"
 
 " Color approximation functions by Henry So, Jr. and David Liang {{{
 " Added to jellygrass.vim by Daniel Herbert
@@ -658,7 +615,6 @@ if !empty("s:overrides")
       unlet l:def
     endfor
   endfun
-  call s:load_colors(s:overrides)
   delf s:load_colors
   delf s:load_color_def
   delf s:current_color
