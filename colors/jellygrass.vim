@@ -76,17 +76,18 @@ let s:grey = 237
 let s:dark_grey = 233
 let s:white = 244
 let s:light_white = 255
-let s:red = 124
-let s:dark_red = 52
+let s:light_red = 1
+let s:red = 9
+let s:dark_red = 88
 let s:green = 64
 let s:light_green = 108
-let s:blue = 33
-let s:cyan = 38
-let s:light_blue = 31
-let s:purple = 98
-let s:yellow = 228
-let s:light_orange = 214
-let s:orange = 130
+let s:blue = "#4d75ba"
+let s:cyan = "#6fbdba"
+let s:light_blue = 110
+let s:yellow = 185
+let s:purple = 98        " Unused
+let s:light_orange = 214 " Unused
+let s:orange = 130       " Unused
 
 let s:termBlack = s:background_color
 
@@ -393,44 +394,45 @@ call s:X("FoldColumn","#535D66","#1f1f1f","","",s:termBlack)
 call s:X("SignColumn","#777777","#333333","","",s:termBlack)
 call s:X("ColorColumn","","#000000","","",s:termBlack)
 
-call s:X("Title","#70b950","","bold","Green","")
 
-call s:X("Constant","#cf6a4c","","","Red","")
-call s:X("Special","#799d6a","","","Green","")
-call s:X("Delimiter","#6fbdba","","","Cyan","")
+call s:X("Title",s:green,"","bold","Green","")
 
-call s:X("String","#e7d56c","","","Yellow","")
-call s:X("StringDelimiter","#e7d56c","","","Yellow","")
+call s:X("Constant",s:red,"","","Red","")
+call s:X("Special",s:green,"","","Green","")
+call s:X("Delimiter",s:cyan,"","","Cyan","")
 
-call s:X("Identifier","#88aa7e","","","LightGreen","")
-call s:X("Structure","#88aa7e","","","LightGreen","")
-call s:X("Function","#88aa7e","","","LightGreen","")
-call s:X("Statement","#608516","","","Green","")
-call s:X("PreProc","#8fbfdc","","","LightBlue","")
+call s:X("String",s:yellow,"","","Yellow","")
+call s:X("StringDelimiter",s:yellow,"","","Yellow","")
+
+call s:X("Identifier",s:light_green,"","","LightGreen","")
+call s:X("Structure",s:light_green,"","","LightGreen","")
+call s:X("Function",s:light_green,"","","LightGreen","")
+call s:X("Statement",s:green,"","","Green","")
+call s:X("PreProc",s:light_blue,"","","LightBlue","")
 
 hi! link Operator Structure
 hi! link Conceal Operator
 
-call s:X("Type","#4d75ba","","","Blue","")
+call s:X("Type",s:blue,"","","Blue","")
 call s:X("NonText","#606060",s:background_color,"",s:termBlack,"")
 
 call s:X("SpecialKey","#444444","#1c1c1c","",s:termBlack,"")
 
 call s:X("Search","#f0a0c0","#302028","underline","Magenta","")
 
-call s:X("Directory","#dad085","","","Yellow","")
-call s:X("ErrorMsg","","#902020","","","DarkRed")
+call s:X("Directory",s:yellow,"","","Yellow","")
+call s:X("ErrorMsg","",s:dark_red,"","","DarkRed")
 hi! link Error ErrorMsg
 hi! link MoreMsg Special
-call s:X("Question","#65C254","","","Green","")
+call s:X("Question",s:cyan,"","","Green","")
 
 
 " Spell Checking
 
-call s:X("SpellBad","","#902020","underline","","DarkRed")
-call s:X("SpellCap","","#0000df","underline","","Blue")
-call s:X("SpellRare","","#540063","underline","","DarkMagenta")
-call s:X("SpellLocal","","#2D7067","underline","","Green")
+call s:X("SpellBad","",s:dark_red,"underline","","DarkRed")
+call s:X("SpellRare","",s:dark_red,"underline","","DarkMagenta")
+call s:X("SpellCap","",s:light_green,"underline","","Blue")
+call s:X("SpellLocal","",s:green,"underline","","Green")
 
 " Diff
 
