@@ -305,49 +305,6 @@ call s:X("IndentGuidesEven","",233,"")
 hi! link TagListFileName Directory
 call s:X("PreciseJumpTarget",155,22,"")
 
-if !empty("s:overrides")
-  fun! s:current_attr(group)
-    let l:synid = synIDtrans(hlID(a:group))
-    let l:attrs = []
-    for l:attr in ["bold", "reverse", "standout", "underline", "undercurl"]
-      if synIDattr(l:synid, l:attr, "gui") == 1
-        call add(l:attrs, l:attr)
-      endif
-    endfor
-    return join(l:attrs, ",")
-  endfun
-  fun! s:current_color(group, what, mode)
-    let l:color = synIDattr(synIDtrans(hlID(a:group)), a:what, a:mode)
-    if l:color == -1
-      return ""
-    else
-      return substitute(l:color, "^#", "", "")
-    endif
-  endfun
-  fun! s:load_color_def(group, def)
-    call s:X(a:group, get(a:def, "guifg", s:current_color(a:group, "fg", "gui")),
-    \                 get(a:def, "guibg", s:current_color(a:group, "bg", "gui")),
-    \                 get(a:def, "attr", s:current_attr(a:group)))
-  endfun
-  fun! s:load_colors(defs)
-    for [l:group, l:def] in items(a:defs)
-      if l:group == "background"
-        call s:load_color_def("LineNr", l:def)
-        call s:load_color_def("NonText", l:def)
-        call s:load_color_def("Normal", l:def)
-      else
-        call s:load_color_def(l:group, l:def)
-      endif
-      unlet l:group
-      unlet l:def
-    endfor
-  endfun
-  delf s:load_colors
-  delf s:load_color_def
-  delf s:current_color
-  delf s:current_attr
-endif
-
 " delete functions {{{
 delf s:X
 delf s:is_empty_or_none
