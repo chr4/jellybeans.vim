@@ -55,7 +55,9 @@ endif
 
 let colors_name = "jellygrass"
 
-let s:background_color = 232
+" Use shell background
+let s:background_color = "NONE"
+
 let s:black = 16
 let s:grey = 237
 let s:dark_grey = 233
@@ -90,7 +92,6 @@ endfun
 " }}}
 
 call s:X("Normal",188,s:background_color,"")
-set background=dark
 
 " Auto-completion
 call s:X("Pmenu",s:white,240,"")
