@@ -97,9 +97,9 @@ if version >= 700
   call s:X("CursorColumn","",234,"")
   call s:X("MatchParen",s:white,60,"bold")
 
-  call s:X("TabLine",s:black,145,"italic")
+  call s:X("TabLine",s:black,145,"")
   call s:X("TabLineFill",103,"","")
-  call s:X("TabLineSel",s:black,255,"italic")
+  call s:X("TabLineSel",s:black,255,"")
 
   " Auto-completion
   call s:X("Pmenu",s:white,240,"")
@@ -111,15 +111,15 @@ call s:X("Cursor",s:background_color,153,"")
 
 call s:X("LineNr",59,s:background_color,"")
 call s:X("CursorLineNr",188,"","")
-call s:X("Comment",244,"","italic")
+call s:X("Comment",244,"","")
 call s:X("Todo",251,"","bold")
 
-call s:X("StatusLine",s:black,253,"italic")
-call s:X("StatusLineNC",s:white,16,"italic")
+call s:X("StatusLine",s:black,253,"")
+call s:X("StatusLineNC",s:white,16,"")
 call s:X("VertSplit",243,16,"")
 call s:X("WildMenu",217,16,"")
 
-call s:X("Folded",145,16,"italic")
+call s:X("Folded",145,16,"")
 call s:X("FoldColumn",59,234,"")
 call s:X("SignColumn",243,236,"")
 call s:X("ColorColumn","",s:black,"")
@@ -309,7 +309,7 @@ if !empty("s:overrides")
   fun! s:current_attr(group)
     let l:synid = synIDtrans(hlID(a:group))
     let l:attrs = []
-    for l:attr in ["bold", "italic", "reverse", "standout", "underline", "undercurl"]
+    for l:attr in ["bold", "reverse", "standout", "underline", "undercurl"]
       if synIDattr(l:synid, l:attr, "gui") == 1
         call add(l:attrs, l:attr)
       endif
