@@ -105,76 +105,58 @@ call s:X("TabLineFill",103,"","")
 call s:X("TabLineSel",s:black,255,"")
 call s:X("Visual","",237,"")
 call s:X("Cursor",s:background_color,153,"")
-
 call s:X("LineNr",59,s:background_color,"")
 call s:X("CursorLineNr",188,"","")
 call s:X("Comment",244,"","")
 call s:X("Todo",251,"","bold")
-
 call s:X("StatusLine",s:black,253,"")
 call s:X("StatusLineNC",s:white,16,"")
 call s:X("VertSplit",243,16,"")
 call s:X("WildMenu",217,16,"")
-
 call s:X("Folded",145,16,"")
 call s:X("FoldColumn",59,234,"")
 call s:X("SignColumn",243,236,"")
 call s:X("ColorColumn","",s:black,"")
-
-
 call s:X("Title",s:green,"","bold")
-
 call s:X("Constant",s:red,"","")
 call s:X("Special",s:green,"","")
 call s:X("Delimiter",s:cyan,"","")
-
 call s:X("String",s:yellow,"","")
 call s:X("StringDelimiter",s:yellow,"","")
-
 call s:X("Identifier",s:light_green,"","")
 call s:X("Structure",s:light_green,"","")
 call s:X("Function",s:light_green,"","")
 call s:X("Statement",s:green,"","")
 call s:X("PreProc",s:light_blue,"","")
-
 hi! link Operator Structure
 hi! link Conceal Operator
-
 call s:X("Type",s:blue,"","")
 call s:X("NonText",240,s:background_color,"")
-
 call s:X("SpecialKey",238,234,"")
-
 call s:X("Search",217,16,"underline")
-
 call s:X("Directory",s:yellow,"","")
 call s:X("ErrorMsg","",s:dark_red,"")
 hi! link Error ErrorMsg
 hi! link MoreMsg Special
 call s:X("Question",s:cyan,"","")
 
-
 " Spell Checking
-
 call s:X("SpellBad","",s:dark_red,"underline")
 call s:X("SpellRare","",s:dark_red,"underline")
 call s:X("SpellCap","",s:light_green,"underline")
 call s:X("SpellLocal","",s:green,"underline")
 
 " Diff
-
 hi! link diffRemoved Constant
 hi! link diffAdded String
 
 " VimDiff
-
 call s:X("DiffAdd",193,22,"")
 call s:X("DiffDelete",16,52,"")
 call s:X("DiffChange","",24,"")
 call s:X("DiffText",110,s:black,"reverse")
 
 " PHP
-
 hi! link phpFunctions Function
 call s:X("StorageClass",179,"","")
 hi! link phpSuperglobal Identifier
@@ -188,35 +170,28 @@ hi! link phpRelation Normal
 hi! link phpVarSelector Identifier
 
 " Python
-
 hi! link pythonOperator Statement
 
 " Ruby
-
 hi! link rubySharpBang Comment
 call s:X("rubyClass",30,"","")
 call s:X("rubyIdentifier",183,"","")
 hi! link rubyConstant Type
 hi! link rubyFunction Function
-
 call s:X("rubyInstanceVariable",183,"","")
 call s:X("rubySymbol",108,"","")
 hi! link rubyGlobalVariable rubyInstanceVariable
 hi! link rubyModule rubyClass
 call s:X("rubyControl",64,"","")
-
 hi! link rubyString String
 hi! link rubyStringDelimiter StringDelimiter
 hi! link rubyInterpolationDelimiter Identifier
-
 call s:X("rubyRegexpDelimiter",53,"","")
 call s:X("rubyRegexp",162,"","")
 call s:X("rubyRegexpSpecial",126,"","")
-
 call s:X("rubyPredefinedIdentifier",168,"","")
 
 " Erlang
-
 hi! link erlangAtom rubySymbol
 hi! link erlangBIF rubyPredefinedIdentifier
 hi! link erlangFunction rubyPredefinedIdentifier
@@ -224,12 +199,9 @@ hi! link erlangDirective Statement
 hi! link erlangNode Identifier
 
 " Elixir
-
 hi! link elixirAtom rubySymbol
 
-
 " JavaScript
-
 hi! link javaScriptValue Constant
 hi! link javaScriptRegexpString rubyRegexp
 hi! link javaScriptTemplateVar StringDelim
@@ -237,20 +209,16 @@ hi! link javaScriptTemplateDelim Identifier
 hi! link javaScriptTemplateString String
 
 " CoffeeScript
-
 hi! link coffeeRegExp javaScriptRegexpString
 
 " Lua
-
 hi! link luaOperator Conditional
 
 " C
-
 hi! link cFormat Identifier
 hi! link cOperator Constant
 
 " Objective-C/Cocoa
-
 hi! link objcClass Type
 hi! link cocoaClass objcClass
 hi! link objcSubclass objcClass
@@ -263,17 +231,14 @@ hi! link objcMethodArg Normal
 hi! link objcMessageName Identifier
 
 " Vimscript
-
 hi! link vimOper Normal
 
 " HTML
-
 hi! link htmlTag Statement
 hi! link htmlEndTag htmlTag
 hi! link htmlTagName htmlTag
 
 " XML
-
 hi! link xmlTag Statement
 hi! link xmlEndTag xmlTag
 hi! link xmlTagName xmlTag
@@ -285,12 +250,10 @@ hi! link xmlDocTypeKeyword PreProc
 hi! link xmlProcessingDelim xmlAttrib
 
 " Debugger.vim
-
 call s:X("DbgCurrent",195,25,"")
 call s:X("DbgBreakPt","",52,"")
 
 " vim-indent-guides
-
 if !exists("g:indent_guides_auto_colors")
   let g:indent_guides_auto_colors = 0
 endif
@@ -298,7 +261,6 @@ call s:X("IndentGuidesOdd","",234,"")
 call s:X("IndentGuidesEven","",233,"")
 
 " Plugins, etc.
-
 hi! link TagListFileName Directory
 call s:X("PreciseJumpTarget",155,22,"")
 
