@@ -92,20 +92,17 @@ endfun
 call s:X("Normal",188,s:background_color,"")
 set background=dark
 
-if version >= 700
-  call s:X("CursorLine","",234,"")
-  call s:X("CursorColumn","",234,"")
-  call s:X("MatchParen",s:white,60,"bold")
+" Auto-completion
+call s:X("Pmenu",s:white,240,"")
+call s:X("PmenuSel",232,255,"")
 
-  call s:X("TabLine",s:black,145,"")
-  call s:X("TabLineFill",103,"","")
-  call s:X("TabLineSel",s:black,255,"")
-
-  " Auto-completion
-  call s:X("Pmenu",s:white,240,"")
-  call s:X("PmenuSel",232,255,"")
-endif
-
+" General highlighting
+call s:X("CursorLine","",234,"")
+call s:X("CursorColumn","",234,"")
+call s:X("MatchParen",s:white,60,"bold")
+call s:X("TabLine",s:black,145,"")
+call s:X("TabLineFill",103,"","")
+call s:X("TabLineSel",s:black,255,"")
 call s:X("Visual","",237,"")
 call s:X("Cursor",s:background_color,153,"")
 
