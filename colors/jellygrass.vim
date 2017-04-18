@@ -100,7 +100,7 @@ call s:X("PmenuSel",232,255,"")
 " General highlighting
 call s:X("CursorLine","",234,"")
 call s:X("CursorColumn","",234,"")
-call s:X("MatchParen",s:white,60,"bold")
+call s:X("MatchParen",s:light_white,s:green,"bold")
 call s:X("TabLine",s:black,145,"")
 call s:X("TabLineFill",103,"","")
 call s:X("TabLineSel",s:black,255,"")
