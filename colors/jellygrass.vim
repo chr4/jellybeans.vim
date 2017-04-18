@@ -351,39 +351,39 @@ fun! s:X(group, fg, bg, attr)
 endfun
 " }}}
 
-call s:X("Normal","#e8e8d3",s:background_color,"")
+call s:X("Normal",188,s:background_color,"")
 set background=dark
 
 if version >= 700
-  call s:X("CursorLine","","#1c1c1c","")
-  call s:X("CursorColumn","","#1c1c1c","")
-  call s:X("MatchParen",s:white,"#556779","bold")
+  call s:X("CursorLine","",234,"")
+  call s:X("CursorColumn","",234,"")
+  call s:X("MatchParen",s:white,60,"bold")
 
-  call s:X("TabLine",s:black,"#b0b8c0","italic")
-  call s:X("TabLineFill","#9098a0","","")
-  call s:X("TabLineSel",s:black,"#f0f0f0","italic")
+  call s:X("TabLine",s:black,145,"italic")
+  call s:X("TabLineFill",103,"","")
+  call s:X("TabLineSel",s:black,255,"italic")
 
   " Auto-completion
-  call s:X("Pmenu",s:white,"#606060","")
-  call s:X("PmenuSel","#101010","#eeeeee","")
+  call s:X("Pmenu",s:white,240,"")
+  call s:X("PmenuSel",232,255,"")
 endif
 
-call s:X("Visual","","#404040","")
-call s:X("Cursor",s:background_color,"#b0d0f0","")
+call s:X("Visual","",237,"")
+call s:X("Cursor",s:background_color,153,"")
 
-call s:X("LineNr","#605958",s:background_color,"NONE")
-call s:X("CursorLineNr","#ccc5c4","","NONE")
-call s:X("Comment","#888888","","italic")
-call s:X("Todo","#c7c7c7","","bold")
+call s:X("LineNr",59,s:background_color,"")
+call s:X("CursorLineNr",188,"","")
+call s:X("Comment",244,"","italic")
+call s:X("Todo",251,"","bold")
 
-call s:X("StatusLine",s:black,"#dddddd","italic")
-call s:X("StatusLineNC",s:white,"#403c41","italic")
-call s:X("VertSplit","#777777","#403c41","")
-call s:X("WildMenu","#f0a0c0","#302028","")
+call s:X("StatusLine",s:black,253,"italic")
+call s:X("StatusLineNC",s:white,16,"italic")
+call s:X("VertSplit",243,16,"")
+call s:X("WildMenu",217,16,"")
 
-call s:X("Folded","#a0a8b0","#384048","italic")
-call s:X("FoldColumn","#535D66","#1f1f1f","")
-call s:X("SignColumn","#777777","#333333","")
+call s:X("Folded",145,16,"italic")
+call s:X("FoldColumn",59,234,"")
+call s:X("SignColumn",243,236,"")
 call s:X("ColorColumn","",s:black,"")
 
 
@@ -406,11 +406,11 @@ hi! link Operator Structure
 hi! link Conceal Operator
 
 call s:X("Type",s:blue,"","")
-call s:X("NonText","#606060",s:background_color,"")
+call s:X("NonText",240,s:background_color,"")
 
-call s:X("SpecialKey","#444444","#1c1c1c","")
+call s:X("SpecialKey",238,234,"")
 
-call s:X("Search","#f0a0c0","#302028","underline")
+call s:X("Search",217,16,"underline")
 
 call s:X("Directory",s:yellow,"","")
 call s:X("ErrorMsg","",s:dark_red,"")
@@ -433,15 +433,15 @@ hi! link diffAdded String
 
 " VimDiff
 
-call s:X("DiffAdd","#D2EBBE","#437019","")
-call s:X("DiffDelete","#40000A","#700009","")
-call s:X("DiffChange","","#2B5B77","")
-call s:X("DiffText","#8fbfdc",s:black,"reverse")
+call s:X("DiffAdd",193,22,"")
+call s:X("DiffDelete",16,52,"")
+call s:X("DiffChange","",24,"")
+call s:X("DiffText",110,s:black,"reverse")
 
 " PHP
 
 hi! link phpFunctions Function
-call s:X("StorageClass","#c59f6f","","")
+call s:X("StorageClass",179,"","")
 hi! link phpSuperglobal Identifier
 hi! link phpQuoteSingle StringDelimiter
 hi! link phpQuoteDouble StringDelimiter
@@ -459,26 +459,26 @@ hi! link pythonOperator Statement
 " Ruby
 
 hi! link rubySharpBang Comment
-call s:X("rubyClass","#447799","","")
-call s:X("rubyIdentifier","#c6b6fe","","")
+call s:X("rubyClass",30,"","")
+call s:X("rubyIdentifier",183,"","")
 hi! link rubyConstant Type
 hi! link rubyFunction Function
 
-call s:X("rubyInstanceVariable","#c6b6fe","","")
-call s:X("rubySymbol","#88aa7e","","")
+call s:X("rubyInstanceVariable",183,"","")
+call s:X("rubySymbol",108,"","")
 hi! link rubyGlobalVariable rubyInstanceVariable
 hi! link rubyModule rubyClass
-call s:X("rubyControl","#608516","","")
+call s:X("rubyControl",64,"","")
 
 hi! link rubyString String
 hi! link rubyStringDelimiter StringDelimiter
 hi! link rubyInterpolationDelimiter Identifier
 
-call s:X("rubyRegexpDelimiter","#540063","","")
-call s:X("rubyRegexp","#dd0093","","")
-call s:X("rubyRegexpSpecial","#a40073","","")
+call s:X("rubyRegexpDelimiter",53,"","")
+call s:X("rubyRegexp",162,"","")
+call s:X("rubyRegexpSpecial",126,"","")
 
-call s:X("rubyPredefinedIdentifier","#de5577","","")
+call s:X("rubyPredefinedIdentifier",168,"","")
 
 " Erlang
 
@@ -551,21 +551,21 @@ hi! link xmlProcessingDelim xmlAttrib
 
 " Debugger.vim
 
-call s:X("DbgCurrent","#DEEBFE","#345FA8","")
-call s:X("DbgBreakPt","","#4F0037","")
+call s:X("DbgCurrent",195,25,"")
+call s:X("DbgBreakPt","",52,"")
 
 " vim-indent-guides
 
 if !exists("g:indent_guides_auto_colors")
   let g:indent_guides_auto_colors = 0
 endif
-call s:X("IndentGuidesOdd","","#232323","")
-call s:X("IndentGuidesEven","","#1b1b1b","")
+call s:X("IndentGuidesOdd","",234,"")
+call s:X("IndentGuidesEven","",233,"")
 
 " Plugins, etc.
 
 hi! link TagListFileName Directory
-call s:X("PreciseJumpTarget","#B9ED67","#405026","")
+call s:X("PreciseJumpTarget",155,22,"")
 
 " Manual overrides for 256-color terminals. Dark colors auto-map badly.
 if !s:low_color
