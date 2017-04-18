@@ -1,20 +1,10 @@
 " Vim color file
 "
-"  "    __       _ _       _                             "
-"  "    \ \  ___| | |_   _| |__   ___  __ _ _ __  ___    "
-"  "     \ \/ _ \ | | | | |  _ \ / _ \/ _  |  _ \/ __|   "
-"  "  /\_/ /  __/ | | |_| | |_| |  __/ |_| | | | \__ \   "
-"  "  \___/ \___|_|_|\__  |____/ \___|\____|_| |_|___/   "
-"  "                 \___/                               "
-"
-"         "A colorful, dark color scheme for Vim."
-"
 " File:         jellygrass.vim
-" URL:          github.com/nanotech/jellygrass.vim
-" Scripts URL:  vim.org/scripts/script.php?script_id=2555
-" Maintainer:   NanoTech (nanotech.nanotechcorp.net)
-" Version:      1.6
-" Last Change:  October 18th, 2016
+" URL:          github.com/chr4/jellygrass.vim
+" Maintainer:   Chris Aumann
+" Version:      1.7
+" Last Change:  April 18th, 2017
 " License:      MIT
 " Contributors: Andrew Wong (w0ng)
 "               Brian Marshall (bmars)
@@ -30,7 +20,7 @@
 "               Siwen Yu (yusiwen)
 "               Tim Willis (willist)
 "
-" Copyright (c) 2009-2016 NanoTech
+" Copyright (c) 2017 Chris Aumann
 "
 " Permission is hereby granted, free of charge, to any per‐
 " son obtaining a copy of this software and associated doc‐
