@@ -60,6 +60,7 @@ let s:background_color = "NONE"
 
 let s:black = 16
 let s:grey = 237
+let s:light_grey = 241
 let s:dark_grey = 233
 let s:white = 244
 let s:light_white = 255
@@ -104,7 +105,7 @@ call s:X("MatchParen",s:light_white,s:green,"bold")
 call s:X("TabLine",s:black,145,"")
 call s:X("TabLineFill",103,"","")
 call s:X("TabLineSel",s:black,255,"")
-call s:X("Visual","",237,"")
+call s:X("Visual","",s:light_grey,"")
 call s:X("Cursor",s:background_color,153,"")
 call s:X("LineNr",s:dark_grey,s:background_color,"")
 call s:X("CursorLineNr",188,"","")
