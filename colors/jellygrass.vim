@@ -99,7 +99,7 @@ call s:X("Pmenu",s:white,240,"")
 call s:X("PmenuSel",232,255,"")
 
 " General highlighting
-call s:X("CursorLine","",234,"")
+call s:X("CursorLine","",s:background_color,"")
 call s:X("CursorColumn","",234,"")
 call s:X("MatchParen",s:light_white,s:green,"bold")
 call s:X("TabLine",s:black,145,"")
